@@ -15,6 +15,7 @@
         local_file_or_folder_path: "{{ artifact_path }}"
         storage_account_name: "{{ cloud_artifact_storage_accountname }}"
         storage_account_key: "{{ cloud_artifact_storage_secret }}"
+        cloud_service_provider: "azure"
       when: cloud_service_provider == "azure"
 
     - name: upload artifact to gcloud storage
