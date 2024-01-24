@@ -1,6 +1,10 @@
 #!/bin/sh
+
+# Assuming graph_db_location is the path to the Neo4j graph database
+graph_db_location="/home/learning/neo4j-learning/neo4j-community-3.3.9/data/databases/graph.db"
+
 cd {{neo4j_home}}
-bin/neo4j-backup --from={{backup_add}} --database=graph.db --to=/home/learning/{{graph_machine}}
+bin/neo4j-backup --from={{backup_add}} --to="$graph_db_location"
 time="$(date '+%e%b%Y')"
 var="{{graph_machine}}"
 var1="_"
@@ -13,3 +17,4 @@ cd /home/learning
 tar -cvzf $var2 {{graph_machine}}
 mkdir /home/learning/backup
 mv $var2 /home/learning/backup
+
