@@ -7,6 +7,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class ConversionUtil {
 
+private ConversionUtil() {
+}
+
     /**
      * The Class ConversionUtil  is a utility
      * used to convert any given map to JSON
