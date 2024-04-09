@@ -1,1 +1,17 @@
+name: Fix Sonar Issues with Pixeebot
+on:
+ workflow_dispatch:
 
+permissions:
+  id-token: write
+
+jobs:
+  share:
+    name: Upload Sonar Results to Pixeebot
+    runs-on: ubuntu-latest
+    steps:
+      - name: Upload Tool Results To Pixeebot
+        uses: pixee/upload-tool-results-action@v1
+        with:
+          tool: sonar
+          sonar-token: ${{ secrets.SONAR_TOKEN }}
